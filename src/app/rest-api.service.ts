@@ -1,22 +1,26 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { HttpClient, HttpParams } from '@angular/common/http';
-import { map } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { catchError, map, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
-@Injectable({
+@Injectable({ 
   providedIn: 'root'
 })
 export class RestApiService {
 
-  public readonly apiUrl: string = 'http://jsonplaceholder.typicode.com/';
+  public readonly apiUrl: string = 'https://pokeapi.co/api/v2/pokemon-form/';
 
-  public constructor (private http: Http) {}
+  public constructor (private http: HttpClient) {}
 
-  public buscarPost() {
-    return new Promise( (resolve, reject) => {
-      this.http.get( this.apiUrl + 'posts', '' ).pipe(
+  public buscarPokemones( ) {
 
-      );
-    });
+    return this.http.get(this.apiUrl , {responseType: 'json'});
+
   }
+
+  public buscarPokemon( direccion:string ) {
+    return this.http.get( this.apiUrl + direccion +'/' , {responseType: 'json'});
+
+  }
+
 }
