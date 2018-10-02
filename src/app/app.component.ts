@@ -7,27 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  inicioMenu: boolean;
-  contactoMenu: boolean;
-
-  constructor() {
-    this.inicioMenu = true;
-    this.contactoMenu = false;
-  }
-
-  changeMenu( nuevoParaMenu ) {
-    switch ( nuevoParaMenu ) {
-      case 'inicio':
-        this.inicioMenu = true;
-        this.contactoMenu = false;
-        break;
-
-      case 'contacto':
-        this.contactoMenu = true;
-        this.inicioMenu = false;
-      break;
-      default:
-        break;
-    }
-  }
 }

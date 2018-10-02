@@ -2,24 +2,18 @@
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo scrolling-navbar">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">Angular!</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
       <!-- Links -->
       <ul class="navbar-nav mr-auto">
 
-          <li class="nav-item" [ngClass]="{
-            'nav-item': true,
-            'active': inicioMenu == true
-          }">
-              <a class="nav-link waves-light" (click)="changeMenu('inicio')" mdbWavesEffect routerLink="/">Inicio<span class="sr-only">(current)</span></a>
-            </li>
-          <li class="nav-item" [ngClass]="{
-            'nav-item': true,
-            'active': contactoMenu == true
-          }">
-              <a class="nav-link waves-light" (click)="changeMenu('contacto')" mdbWavesEffect routerLink="/contacto">Contacto<span class="sr-only">(current)</span></a>
+          <li class="nav-item active">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/">Inicio<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link waves-light" mdbWavesEffect routerLink="/contacto">Contacto</a>
           </li>
       </ul>
       <!-- Links -->
